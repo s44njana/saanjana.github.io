@@ -136,6 +136,75 @@
     .hero-stats { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
   }
+  /* ── LIVE DEMOS (added) ─────────────────────────────────────── */
+  #demos { background: var(--card); }
+  #demos .d-intro { font-size: 1.05rem; color: var(--ink2); max-width: 640px; line-height: 1.8; margin: -1.75rem 0 2.5rem; }
+  .d-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .d-tab { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 100px; background: transparent; color: var(--ink2); cursor: pointer; transition: all 0.15s; }
+  .d-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .d-tab[aria-selected="true"] { background: var(--accent); color: white; border-color: var(--accent); }
+  .d-panel { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+  .d-panel[hidden] { display: none; }
+  .d-panel h3 { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; line-height: 1.25; margin-bottom: 0.35rem; }
+  .d-desc { font-size: 0.95rem; color: var(--ink2); line-height: 1.7; margin-bottom: 1.5rem; max-width: 700px; }
+  .d-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end; margin-bottom: 1rem; }
+  .d-field { display: flex; flex-direction: column; gap: 0.35rem; flex: 1 1 220px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); }
+  .d-panel input[type="text"], .d-panel textarea { font-family: var(--sans); font-weight: 400; font-size: 0.95rem; color: var(--ink); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.8rem; width: 100%; text-transform: none; letter-spacing: normal; }
+  .d-panel textarea { font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; resize: vertical; }
+  .d-panel input[type="file"] { font-family: var(--sans); font-size: 0.85rem; color: var(--ink2); max-width: 100%; text-transform: none; letter-spacing: normal; }
+  .d-panel input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .d-panel input:focus-visible, .d-panel textarea:focus-visible, .d-tab:focus-visible, .d-btn:focus-visible, .d-chip:focus-visible, .d-cell:focus-visible, .d-panel summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .d-btn { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; padding: 0.55rem 1.1rem; border-radius: var(--radius); border: 1px solid var(--border); background: transparent; color: var(--ink); cursor: pointer; transition: all 0.2s; }
+  .d-btn:hover { background: var(--surface); }
+  .d-btn.d-primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .d-btn.d-primary:hover { background: #1e3f2a; }
+  .d-chip { font-family: var(--mono); font-size: 0.72rem; color: var(--ink2); border: 1px solid var(--border); background: var(--card); padding: 0.25rem 0.75rem; border-radius: 100px; cursor: pointer; transition: all 0.15s; }
+  .d-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .d-status { font-family: var(--mono); font-size: 0.8rem; color: var(--ink2); margin-bottom: 0.9rem; min-height: 1.4em; }
+  .d-status.err { color: #A3341F; }
+  .d-hint { font-size: 0.8rem; color: var(--ink3); margin-top: 0.6rem; line-height: 1.6; }
+  .d-hint code { font-family: var(--mono); font-size: 0.78rem; }
+  .d-results { list-style: none; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .d-results li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 1rem; background: var(--card); border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+  .d-results li:last-child { border-bottom: none; }
+  .d-results .w { font-family: var(--mono); font-size: 0.8rem; color: var(--ink3); }
+  .d-results mark { background: rgba(45,90,61,0.12); color: var(--accent); font-weight: 500; border-radius: 2px; }
+  .d-results li.d-empty { color: var(--ink3); justify-content: flex-start; }
+
+  .d-gomoku { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; }
+  .d-board { display: grid; border: 1px solid rgba(26,24,21,0.25); border-radius: var(--radius); overflow: hidden; background: #E8DCBE; --cell: 44px; }
+  .d-cell { width: var(--cell); height: var(--cell); position: relative; cursor: pointer; background: transparent; border: solid rgba(26,24,21,0.18); border-width: 0 1px 1px 0; }
+  .d-cell:disabled { cursor: default; }
+  .d-cell:not(:disabled):hover { background: rgba(45,90,61,0.15); }
+  .d-cell::before { content: ""; position: absolute; inset: 17%; border-radius: 50%; }
+  .d-cell[data-s="b"]::before { background: #1A1815; box-shadow: 0 1px 3px rgba(0,0,0,0.35); }
+  .d-cell[data-s="w"]::before { background: #FDFCF9; border: 2px solid #9A9690; }
+  .d-cell.last::after { content: ""; position: absolute; inset: 40%; border-radius: 50%; background: var(--accent2); }
+  .d-side { flex: 1 1 260px; min-width: 240px; }
+  .d-panel details { margin-top: 1rem; }
+  .d-panel summary { cursor: pointer; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  table.d-an { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+  table.d-an th, table.d-an td { border-bottom: 1px solid var(--border); padding: 0.35rem 0.5rem; text-align: right; font-weight: 400; }
+  table.d-an th { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
+  table.d-an th:first-child, table.d-an td:first-child { text-align: left; }
+
+  .d-seam { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 0.5rem; }
+  .d-seam figure { margin: 0; }
+  .d-seam figcaption { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 0.4rem; }
+  .d-frame { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px; }
+  .d-frame canvas { display: block; height: auto; border-radius: 2px; }
+
+  .d-bars { list-style: none; margin-top: 0.75rem; }
+  .d-bars li { display: grid; grid-template-columns: 110px 1fr 56px; gap: 0.75rem; align-items: center; margin-bottom: 0.45rem; font-size: 0.92rem; }
+  .d-bars .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .d-bars .track { background: var(--surface); border-radius: 100px; height: 12px; overflow: hidden; }
+  .d-bars .fill { display: block; height: 100%; background: var(--ink3); opacity: 0.55; border-radius: 100px; }
+  .d-bars li.best .fill { background: var(--accent); opacity: 1; }
+  .d-bars li.best .name { color: var(--accent); font-weight: 500; }
+  .d-bars .val { text-align: right; font-family: var(--mono); font-size: 0.78rem; color: var(--ink3); }
+
+  @media (max-width: 900px) { .d-panel { padding: 1.25rem; } #demos .d-intro { margin-top: -1.5rem; } }
+  @media (max-width: 600px) { .d-board { --cell: 36px; } .d-bars li { grid-template-columns: 84px 1fr 48px; } }
 </style>
 </head>
 <body>
@@ -145,6 +214,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#demos">Demos</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -189,6 +259,119 @@
     <button class="filter-btn" data-filter="pdf">Reports & PDFs</button>
   </div>
   <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+<section id="demos">
+  <p class="section-tag">Try It Live</p>
+  <h2 class="section-title">Interactive Demos</h2>
+  <p class="d-intro">Browsers can't run C or Python directly, so these demos run JavaScript ports of the same algorithms from my code projects above.</p>
+
+  <div class="d-tabs" role="tablist" aria-label="Project demos">
+    <button class="d-tab" role="tab" id="tab-autocomplete" aria-controls="demo-autocomplete" aria-selected="true">Autocomplete</button>
+    <button class="d-tab" role="tab" id="tab-gomoku" aria-controls="demo-gomoku" aria-selected="false" tabindex="-1">Gomoku</button>
+    <button class="d-tab" role="tab" id="tab-seam" aria-controls="demo-seam" aria-selected="false" tabindex="-1">Seam Carving</button>
+    <button class="d-tab" role="tab" id="tab-synonyms" aria-controls="demo-synonyms" aria-selected="false" tabindex="-1">Semantic Similarity</button>
+  </div>
+
+  <!-- Autocomplete -->
+  <div class="d-panel" role="tabpanel" id="demo-autocomplete" aria-labelledby="tab-autocomplete">
+    <h3>Autocomplete</h3>
+    <p class="d-desc">Type a prefix. Matches are found with two binary searches over the sorted list, then ranked by weight (highest first).</p>
+    <div class="d-row">
+      <label class="d-field">Prefix
+        <input type="text" id="ac-input" autocomplete="off" spellcheck="false" placeholder="Try: San">
+      </label>
+    </div>
+    <div class="d-row" id="ac-examples" aria-label="Example prefixes"></div>
+    <p class="d-status" id="ac-status" aria-live="polite"></p>
+    <ul class="d-results" id="ac-results"></ul>
+    <p class="d-hint">Matching is case-sensitive, like the C version. The sample list is cities with rounded, illustrative population weights.</p>
+    <div class="d-row" style="margin-top:1.25rem">
+      <label class="d-field" style="flex:2 1 260px">Load your own file
+        <input type="file" id="ac-file" accept=".txt,.tsv,text/plain">
+      </label>
+      <button class="d-btn" id="ac-reset" type="button">Use sample list</button>
+    </div>
+    <p class="d-hint">File format: an optional first line with the count, then one <code>weight&lt;TAB&gt;term</code> per line.</p>
+  </div>
+
+  <!-- Gomoku -->
+  <div class="d-panel" role="tabpanel" id="demo-gomoku" aria-labelledby="tab-gomoku" hidden>
+    <h3>Gomoku</h3>
+    <p class="d-desc">Get five in a row. You are White (light stones). The computer is Black and moves first. It scores every empty square using open and semi-open sequence counts and plays the best one.</p>
+    <div class="d-gomoku">
+      <div><div class="d-board" id="gm-board" role="grid" aria-label="Gomoku board"></div></div>
+      <div class="d-side">
+        <p class="d-status" id="gm-status" aria-live="polite"></p>
+        <button class="d-btn" id="gm-new" type="button">New game</button>
+        <details>
+          <summary>Show the AI's sequence analysis</summary>
+          <table class="d-an" id="gm-analysis"></table>
+          <p class="d-hint">Open = both ends empty. Semi-open = exactly one end empty. These counts feed the scoring function.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seam carving -->
+  <div class="d-panel" role="tabpanel" id="demo-seam" aria-labelledby="tab-seam" hidden>
+    <h3>Seam Carving</h3>
+    <p class="d-desc">Drag the slider to remove the lowest-energy vertical seams. Watch the sky and ground shrink first while detailed objects stay intact.</p>
+    <div class="d-row">
+      <button class="d-btn" id="sc-sample" type="button">Use sample image</button>
+      <label class="d-field" style="flex:2 1 260px">Or upload an image
+        <input type="file" id="sc-file" accept="image/*">
+      </label>
+    </div>
+    <p class="d-status" id="sc-status" aria-live="polite"></p>
+    <label class="d-field" style="margin-bottom:0.75rem">
+      <span id="sc-label">Seams removed: 0</span>
+      <input type="range" id="sc-range" min="0" max="0" value="0" disabled>
+    </label>
+    <div class="d-seam">
+      <figure><figcaption>Original (removed seams in red)</figcaption><div class="d-frame"><canvas id="sc-orig" style="width:100%"></canvas></div></figure>
+      <figure><figcaption>Energy map (brighter = more detail)</figcaption><div class="d-frame"><canvas id="sc-energy" style="width:100%"></canvas></div></figure>
+      <figure><figcaption id="sc-result-cap">Result</figcaption><div class="d-frame"><canvas id="sc-result"></canvas></div></figure>
+    </div>
+    <p class="d-hint">Large images are scaled down to fit the demo. The result is drawn at the same scale as the original so you can see it get narrower.</p>
+  </div>
+
+  <!-- Semantic similarity -->
+  <div class="d-panel" role="tabpanel" id="demo-synonyms" aria-labelledby="tab-synonyms" hidden>
+    <h3>Semantic Similarity</h3>
+    <p class="d-desc">Words that appear in similar company are probably similar in meaning. Pick a word and some candidates, and the one with the highest cosine similarity wins.</p>
+    <label class="d-field" style="margin-bottom:0.75rem">Text to learn from (edit it, or add larger .txt files below)
+      <textarea id="sy-corpus" rows="7" spellcheck="false"></textarea>
+    </label>
+    <div class="d-row">
+      <button class="d-btn d-primary" id="sy-build" type="button">Build word vectors</button>
+      <label class="d-field" style="flex:2 1 260px">Add text files
+        <input type="file" id="sy-files" accept=".txt,text/plain" multiple>
+      </label>
+      <button class="d-btn" id="sy-clear" type="button">Remove uploaded files</button>
+    </div>
+    <p class="d-status" id="sy-status" aria-live="polite"></p>
+    <div class="d-row">
+      <label class="d-field">Target word
+        <input type="text" id="sy-word" value="puppy" autocomplete="off" spellcheck="false">
+      </label>
+      <label class="d-field" style="flex:2 1 300px">Choices (comma separated)
+        <input type="text" id="sy-choices" value="kitten, car, bread, house" autocomplete="off" spellcheck="false">
+      </label>
+      <button class="d-btn d-primary" id="sy-go" type="button">Find most similar</button>
+    </div>
+    <ul class="d-bars" id="sy-bars"></ul>
+    <details>
+      <summary>Run a synonym test</summary>
+      <p class="d-hint">One question per line: <code>word correct-answer choice1 choice2 ...</code> (the correct answer must be among the choices).</p>
+      <textarea id="sy-test" rows="5" spellcheck="false" style="margin-top:0.5rem"></textarea>
+      <div class="d-row" style="margin-top:0.75rem;align-items:center">
+        <button class="d-btn" id="sy-run" type="button">Run test</button>
+        <span class="d-status" id="sy-test-out" style="margin:0" aria-live="polite"></span>
+      </div>
+    </details>
+    <p class="d-hint">Tip: the built-in text is tiny. Add a few chapters of a public-domain book (for example from Project Gutenberg) to see better results.</p>
+  </div>
 </section>
 
 <section id="contact">
@@ -440,6 +623,837 @@ const PORTFOLIO = {
 
   document.getElementById("footer").innerHTML =
     `&copy; ${new Date().getFullYear()} ${PORTFOLIO.name} &mdash; Built with GitHub Pages`;
+})();
+</script>
+<script>
+/* ================================================================
+   LIVE DEMOS (added): JavaScript ports of the C / Python projects
+   ================================================================ */
+(function () {
+const $ = (id) => document.getElementById(id);
+const esc = (s) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ================================================================
+   CORE ALGORITHMS: JavaScript ports of the original C / Python code.
+   No DOM access in this block, so it can be tested with node.
+   ================================================================ */
+
+/* ---------- Autocomplete (port of autocomplete.c) ---------- */
+function cmpStr(a, b) { return a < b ? -1 : (a > b ? 1 : 0); }
+
+// Same file format as read_in_terms: optional count line, then "weight<TAB>term"
+function parseTerms(text) {
+  const lines = text.split(/\r?\n/);
+  let start = 0;
+  if (lines.length && /^\s*\d+\s*$/.test(lines[0])) start = 1;
+  const terms = [];
+  for (let i = start; i < lines.length; i++) {
+    const m = lines[i].match(/^\s*([0-9.eE+-]+)\s+(.+?)\s*$/);
+    if (m) terms.push({ weight: parseFloat(m[1]), term: m[2] });
+  }
+  terms.sort((a, b) => cmpStr(a.term, b.term));   // qsort by term
+  return terms;
+}
+
+function lowestMatch(terms, substr) {
+  if (terms.length === 0) return -1;
+  const lenSub = substr.length;
+  let low = 0, high = terms.length - 1, result = -1;
+  while (low <= high) {
+    const mid = low + Math.floor((high - low) / 2);
+    const cmp = cmpStr(terms[mid].term, substr);
+    if (cmp >= 0) {
+      if (lenSub === 0 || terms[mid].term.startsWith(substr)) result = mid;
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return result;
+}
+
+function highestMatch(terms, substr) {
+  if (terms.length === 0) return -1;
+  const lenSub = substr.length;
+  let low = 0, high = terms.length - 1, result = -1;
+  while (low <= high) {
+    const mid = low + Math.floor((high - low) / 2);
+    if (lenSub === 0 || terms[mid].term.startsWith(substr)) {
+      result = mid;
+      low = mid + 1;
+    } else if (cmpStr(terms[mid].term, substr) < 0) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return result;
+}
+
+function autocomplete(terms, substr) {
+  const low = lowestMatch(terms, substr);
+  const high = highestMatch(terms, substr);
+  if (low === -1 || high === -1) return { low: -1, high: -1, answer: [] };
+  const answer = terms.slice(low, high + 1).sort((a, b) => b.weight - a.weight);
+  return { low, high, answer };
+}
+
+/* ---------- Gomoku (port of gomoku.py) ---------- */
+function makeEmptyBoard(sz) {
+  const board = [];
+  for (let i = 0; i < sz; i++) board.push(new Array(sz).fill(' '));
+  return board;
+}
+
+function isEmptyBoard(board) {
+  return board.every(row => row.every(c => c === ' '));
+}
+
+function inBounds(board, y, x) {
+  return y >= 0 && y < board.length && x >= 0 && x < board.length;
+}
+
+function isBounded(board, yEnd, xEnd, length, dy, dx) {
+  const yStart = yEnd - (length - 1) * dy;
+  const xStart = xEnd - (length - 1) * dx;
+  const yBefore = yStart - dy, yAfter = yEnd + dy;
+  const xBefore = xStart - dx, xAfter = xEnd + dx;
+  const afterBlocked = inBounds(board, yAfter, xAfter) ? board[yAfter][xAfter] !== ' ' : true;
+  const beforeBlocked = inBounds(board, yBefore, xBefore) ? board[yBefore][xBefore] !== ' ' : true;
+  if (!afterBlocked && !beforeBlocked) return 'OPEN';
+  if (afterBlocked !== beforeBlocked) return 'SEMIOPEN';
+  return 'CLOSED';
+}
+
+function detectRow(board, col, yStart, xStart, length, dy, dx) {
+  let open = 0, semi = 0;
+  let curLength = 0, curY = yStart, curX = xStart;
+  while (inBounds(board, curY, curX)) {
+    if (board[curY][curX] === col) {
+      curLength++;
+    } else {
+      if (curLength === length) {
+        const b = isBounded(board, curY - dy, curX - dx, length, dy, dx);
+        if (b === 'OPEN') open++; else if (b === 'SEMIOPEN') semi++;
+      }
+      curLength = 0;
+    }
+    curY += dy; curX += dx;
+  }
+  if (curLength === length) {
+    const b = isBounded(board, curY - dy, curX - dx, length, dy, dx);
+    if (b === 'OPEN') open++; else if (b === 'SEMIOPEN') semi++;
+  }
+  return [open, semi];
+}
+
+function detectRows(board, col, length) {
+  const n = board.length;
+  let open = 0, semi = 0;
+  const add = (r) => { open += r[0]; semi += r[1]; };
+  for (let y = 0; y < n; y++) add(detectRow(board, col, y, 0, length, 0, 1));      // horizontal
+  for (let x = 0; x < n; x++) add(detectRow(board, col, 0, x, length, 1, 0));      // vertical
+  for (let y = 0; y < n; y++) add(detectRow(board, col, y, 0, length, 1, 1));      // diagonal
+  for (let x = 1; x < n; x++) add(detectRow(board, col, 0, x, length, 1, 1));
+  for (let y = 0; y < n; y++) add(detectRow(board, col, y, n - 1, length, 1, -1)); // anti-diagonal
+  for (let x = n - 2; x > 0; x--) add(detectRow(board, col, 0, x, length, 1, -1));
+  return [open, semi];
+}
+
+function score(board) {
+  const MAX_SCORE = 100000;
+  const openB = {}, semiB = {}, openW = {}, semiW = {};
+  for (let i = 2; i < 6; i++) {
+    [openB[i], semiB[i]] = detectRows(board, 'b', i);
+    [openW[i], semiW[i]] = detectRows(board, 'w', i);
+  }
+  if (openB[5] >= 1 || semiB[5] >= 1) return MAX_SCORE;
+  if (openW[5] >= 1 || semiW[5] >= 1) return -MAX_SCORE;
+  return (-10000 * (openW[4] + semiW[4]) +
+          500 * openB[4] +
+          50 * semiB[4] +
+          -100 * openW[3] +
+          -30 * semiW[3] +
+          50 * openB[3] +
+          10 * semiB[3] +
+          openB[2] + semiB[2] - openW[2] - semiW[2]);
+}
+
+function searchMax(board) {
+  let bestScore = null, moveY = null, moveX = null;
+  for (let y = 0; y < board.length; y++) {
+    for (let x = 0; x < board.length; x++) {
+      if (board[y][x] === ' ') {
+        board[y][x] = 'b';
+        const s = score(board);
+        board[y][x] = ' ';
+        if (bestScore === null || s > bestScore) { bestScore = s; moveY = y; moveX = x; }
+      }
+    }
+  }
+  if (moveY === null) return [Math.floor(board.length / 2), Math.floor(board.length / 2)];
+  return [moveY, moveX];
+}
+
+function hasFive(board, col) {
+  const dirs = [[0, 1], [1, 0], [1, 1], [1, -1]];
+  for (let y = 0; y < board.length; y++) {
+    for (let x = 0; x < board.length; x++) {
+      if (board[y][x] !== col) continue;
+      for (const [dy, dx] of dirs) {
+        let count = 0;
+        for (let i = 0; i < 5; i++) {
+          const cy = y + i * dy, cx = x + i * dx;
+          if (inBounds(board, cy, cx) && board[cy][cx] === col) count++; else break;
+        }
+        if (count === 5) return true;
+      }
+    }
+  }
+  return false;
+}
+
+function isWin(board) {
+  if (hasFive(board, 'b')) return 'Black won';
+  if (hasFive(board, 'w')) return 'White won';
+  if (board.every(row => row.every(c => c !== ' '))) return 'Draw';
+  return 'Continue playing';
+}
+
+/* ---------- Seam carving (port of seamcarving.c) ----------
+   img = { w, h, data } where data is RGBA bytes (like canvas ImageData). */
+function calcEnergy(img) {
+  const { w, h, data } = img;
+  const out = new Uint8Array(w * h);
+  const px = (y, x, c) => data[(y * w + x) * 4 + c];
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const left = x - 1 < 0 ? w - 1 : x - 1;
+      const right = x + 1 >= w ? 0 : x + 1;
+      const up = y - 1 < 0 ? h - 1 : y - 1;
+      const down = y + 1 >= h ? 0 : y + 1;
+      const rx = px(y, right, 0) - px(y, left, 0);
+      const gx = px(y, right, 1) - px(y, left, 1);
+      const bx = px(y, right, 2) - px(y, left, 2);
+      const ry = px(down, x, 0) - px(up, x, 0);
+      const gy = px(down, x, 1) - px(up, x, 1);
+      const by = px(down, x, 2) - px(up, x, 2);
+      const dx2 = rx * rx + gx * gx + bx * bx;
+      const dy2 = ry * ry + gy * gy + by * by;
+      let e = Math.floor(Math.sqrt(dx2 + dy2) / 10);
+      if (e > 255) e = 255;
+      out[y * w + x] = e;
+    }
+  }
+  return out;
+}
+
+function dynamicSeam(energy, h, w) {
+  const best = new Float64Array(h * w);
+  for (let j = 0; j < w; j++) best[j] = energy[j];
+  for (let i = 1; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      let b = best[(i - 1) * w + j];
+      if (j - 1 >= 0) { const ul = best[(i - 1) * w + (j - 1)]; if (ul < b) b = ul; }
+      if (j + 1 < w) { const ur = best[(i - 1) * w + (j + 1)]; if (ur < b) b = ur; }
+      best[i * w + j] = energy[i * w + j] + b;
+    }
+  }
+  return best;
+}
+
+function recoverPath(best, h, w) {
+  const path = new Int32Array(h);
+  let minCol = 0, minVal = best[(h - 1) * w];
+  for (let j = 1; j < w; j++) {
+    const v = best[(h - 1) * w + j];
+    if (v < minVal) { minVal = v; minCol = j; }
+  }
+  path[h - 1] = minCol;
+  for (let i = h - 2; i >= 0; i--) {
+    const col = path[i + 1];
+    let bestVal = best[i * w + col], bestCol = col;
+    if (col - 1 >= 0) { const ul = best[i * w + (col - 1)]; if (ul < bestVal) { bestVal = ul; bestCol = col - 1; } }
+    if (col + 1 < w) { const ur = best[i * w + (col + 1)]; if (ur < bestVal) { bestVal = ur; bestCol = col + 1; } }
+    path[i] = bestCol;
+  }
+  return path;
+}
+
+function removeSeam(img, path) {
+  const { w, h, data } = img;
+  const out = new Uint8ClampedArray((w - 1) * h * 4);
+  for (let i = 0; i < h; i++) {
+    let dc = 0;
+    for (let j = 0; j < w; j++) {
+      if (j === path[i]) continue;
+      const s = (i * w + j) * 4, d = (i * (w - 1) + dc) * 4;
+      out[d] = data[s]; out[d + 1] = data[s + 1]; out[d + 2] = data[s + 2]; out[d + 3] = 255;
+      dc++;
+    }
+  }
+  return { w: w - 1, h, data: out };
+}
+
+// Repeats energy -> DP -> path -> remove, remembering where each seam sat in the
+// ORIGINAL image so the page can show any number of removed seams instantly.
+function computeSeams(img, count) {
+  const { w, h } = img;
+  let cur = { w, h, data: img.data };
+  const colMap = [];
+  for (let i = 0; i < h; i++) colMap.push(Int32Array.from({ length: w }, (_, j) => j));
+  const mask = new Uint16Array(w * h);      // 0 = never removed, k = removed by seam k
+  let firstEnergy = null;
+  for (let k = 1; k <= count && cur.w > 1; k++) {
+    const energy = calcEnergy(cur);
+    if (k === 1) firstEnergy = energy;
+    const best = dynamicSeam(energy, cur.h, cur.w);
+    const path = recoverPath(best, cur.h, cur.w);
+    for (let i = 0; i < h; i++) {
+      mask[i * w + colMap[i][path[i]]] = k;
+      colMap[i].copyWithin(path[i], path[i] + 1, cur.w);
+    }
+    cur = removeSeam(cur, path);
+  }
+  return { mask, firstEnergy };
+}
+
+/* ---------- Semantic similarity (port of synonyms.py) ---------- */
+function cosineSimilarity(v1, v2) {
+  let dot = 0, m1 = 0, m2 = 0;
+  for (const [k, val] of v1) {
+    m1 += val * val;
+    const o = v2.get(k);
+    if (o !== undefined) dot += val * o;
+  }
+  for (const val of v2.values()) m2 += val * val;
+  if (m1 === 0 || m2 === 0) return 0;
+  return Math.round((dot / (Math.sqrt(m1) * Math.sqrt(m2))) * 1000) / 1000;
+}
+
+function buildSemanticDescriptors(sentences) {
+  const d = new Map();
+  for (const sentence of sentences) {
+    const set = new Set(sentence);
+    for (const w of set) {
+      if (!d.has(w)) d.set(w, new Map());
+      const inner = d.get(w);
+      for (const nw of set) {
+        if (w !== nw) inner.set(nw, (inner.get(nw) || 0) + 1);
+      }
+    }
+  }
+  return d;
+}
+
+function textToSentences(text) {
+  text = text.toLowerCase();
+  text = text.replace(/,/g, '').replace(/-/g, '').replace(/:/g, '').replace(/;/g, '');
+  text = text.replace(/!/g, '.').replace(/\?/g, '.');
+  const sentences = [];
+  for (const s of text.split('.')) {
+    const w = s.split(/\s+/).filter(Boolean);
+    if (w.length > 0) sentences.push(w);
+  }
+  return sentences;
+}
+
+function rankChoices(word, choices, desc) {
+  const wv = desc.get(word);
+  return choices.map(choice => {
+    if (!wv || !desc.has(choice)) return { choice, sim: -1 };
+    return { choice, sim: cosineSimilarity(wv, desc.get(choice)) };
+  });
+}
+
+function mostSimilarWord(word, choices, desc) {
+  let best = choices[0], max = -1;
+  if (!desc.has(word)) return best;
+  for (const r of rankChoices(word, choices, desc)) {
+    if (r.sim > max) { max = r.sim; best = r.choice; }
+  }
+  return best;
+}
+
+function runSimilarityTest(text, desc) {
+  let correct = 0, total = 0;
+  for (const line of text.split('\n')) {
+    const words = line.split(/\s+/).filter(Boolean);
+    if (words.length < 3) continue;
+    if (mostSimilarWord(words[0], words.slice(2), desc) === words[1]) correct++;
+    total++;
+  }
+  return { correct, total, pct: total === 0 ? 0 : (correct / total) * 100 };
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = { parseTerms, lowestMatch, highestMatch, autocomplete, makeEmptyBoard, isEmptyBoard,
+    isBounded, detectRow, detectRows, score, searchMax, isWin, calcEnergy, dynamicSeam, recoverPath,
+    removeSeam, computeSeams, cosineSimilarity, buildSemanticDescriptors, textToSentences,
+    rankChoices, mostSimilarWord, runSimilarityTest };
+}
+
+
+/* ---------- add a "Live Demo" button to the four code project cards ---------- */
+const DEMO_FOR = { 'Seam Carving': 'seam', 'Autocomplete': 'autocomplete', 'Gomoku': 'gomoku', 'Semantic Similarity': 'synonyms' };
+const DEMO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+document.querySelectorAll('.project-card').forEach(card => {
+  const t = card.querySelector('.project-title');
+  const key = t && DEMO_FOR[t.textContent.trim()];
+  const links = card.querySelector('.project-links');
+  if (!key || !links) return;
+  const a = document.createElement('a');
+  a.className = 'project-link'; a.href = '#demo-' + key; a.dataset.demo = key;
+  a.innerHTML = DEMO_ICON + 'Live Demo';
+  links.appendChild(a);
+});
+
+/* ---------- tabs ---------- */
+const DEMOS = ['autocomplete', 'gomoku', 'seam', 'synonyms'];
+const inited = {};
+function showDemo(name, focusTab) {
+  DEMOS.forEach(d => {
+    const on = d === name;
+    const tab = $('tab-' + d);
+    tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    tab.tabIndex = on ? 0 : -1;
+    $('demo-' + d).hidden = !on;
+  });
+  if (focusTab) $('tab-' + name).focus();
+  if (!inited[name]) { inited[name] = true; initDemo[name](); }
+}
+DEMOS.forEach((d, i) => {
+  $('tab-' + d).addEventListener('click', () => showDemo(d));
+  $('tab-' + d).addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); showDemo(DEMOS[(i + 1) % DEMOS.length], true); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); showDemo(DEMOS[(i + DEMOS.length - 1) % DEMOS.length], true); }
+  });
+});
+document.querySelectorAll('a[data-demo]').forEach(a => a.addEventListener('click', (e) => {
+  e.preventDefault();
+  showDemo(a.dataset.demo);
+  $('demos').scrollIntoView({ behavior: 'smooth' });
+  history.replaceState(null, '', '#demo-' + a.dataset.demo);
+}));
+
+/* ================================================================
+   AUTOCOMPLETE DEMO
+   ================================================================ */
+const SAMPLE_CITIES = `
+37400\tTokyo
+31000\tDelhi
+27000\tShanghai
+22000\tSao Paulo
+21800\tMexico City
+21000\tCairo
+20700\tMumbai
+20500\tBeijing
+20100\tDhaka
+18800\tOsaka
+18800\tNew York
+15000\tKarachi
+15000\tBuenos Aires
+14900\tChongqing
+14900\tIstanbul
+14400\tKolkata
+14400\tManila
+13500\tLagos
+13300\tRio de Janeiro
+13200\tTianjin
+12600\tKinshasa
+12400\tGuangzhou
+12300\tLos Angeles
+12300\tMoscow
+11000\tShenzhen
+11000\tLahore
+10800\tBangalore
+10800\tParis
+10600\tBogota
+10500\tJakarta
+10400\tChennai
+10400\tLima
+10200\tBangkok
+10000\tSeoul
+9500\tNagoya
+9400\tHyderabad
+9300\tLondon
+9300\tTehran
+9000\tChicago
+8600\tChengdu
+8500\tNanjing
+8300\tWuhan
+8000\tHo Chi Minh City
+7500\tLuanda
+7400\tAhmedabad
+7400\tKuala Lumpur
+6600\tHong Kong
+6300\tDallas
+6200\tToronto
+6200\tHouston
+6100\tMiami
+5900\tMadrid
+5800\tSingapore
+5800\tPhiladelphia
+5700\tSantiago
+5700\tPune
+5600\tWashington
+5500\tBarcelona
+5500\tSaint Petersburg
+5400\tAtlanta
+5300\tBoston
+5300\tSydney
+5200\tSan Francisco
+5000\tMontreal
+5000\tMelbourne
+4900\tSeattle
+4800\tSan Diego
+4700\tSan Jose
+4600\tSan Antonio
+4400\tSan Juan
+4300\tSan Salvador
+4200\tSanta Cruz
+4100\tSanta Fe
+4000\tSantiago de Compostela
+3900\tSantos
+3800\tMilan
+3700\tMunich
+3500\tMinneapolis
+3400\tManchester
+3300\tMadison
+3200\tMarseille
+3100\tMonterrey
+3000\tMontevideo
+2900\tNairobi
+2800\tNaples
+2700\tNashville
+2600\tNew Orleans
+2500\tNewcastle
+2400\tNice
+2300\tTaipei
+2200\tTampa
+2100\tTallinn
+2000\tTel Aviv
+1900\tTurin
+1800\tTokushima
+1700\tToledo
+1600\tTorino
+`;
+let acTerms = [];
+const AC_EXAMPLES = ['San', 'Sa', 'To', 'M', 'New', 'T'];
+const initDemo = {};
+
+initDemo.autocomplete = function () {
+  const input = $('ac-input'), status = $('ac-status'), list = $('ac-results');
+  function load(text) { acTerms = parseTerms(text); run(); }
+  function run() {
+    const q = input.value;
+    const r = autocomplete(acTerms, q);
+    if (acTerms.length === 0) {
+      status.textContent = 'No terms loaded. Check the file format.'; status.className = 'd-status err';
+      list.innerHTML = ''; return;
+    }
+    status.className = 'd-status';
+    if (r.answer.length === 0) {
+      let msg = 'No matches.';
+      if (q && q[0] === q[0].toLowerCase() && q[0] !== q[0].toUpperCase()) msg += ' Matching is case-sensitive, so try a capital letter.';
+      status.textContent = '0 of ' + acTerms.length.toLocaleString() + ' terms match';
+      list.innerHTML = '<li class="d-empty">' + esc(msg) + '</li>';
+      return;
+    }
+    status.textContent = r.answer.length.toLocaleString() + ' of ' + acTerms.length.toLocaleString() +
+      ' terms match · binary search found sorted positions ' + r.low + ' to ' + r.high;
+    const shown = r.answer.slice(0, 15);
+    list.innerHTML = shown.map(t => {
+      const label = '<mark>' + esc(t.term.slice(0, q.length)) + '</mark>' + esc(t.term.slice(q.length));
+      return '<li><span>' + label + '</span><span class="w">' + t.weight.toLocaleString() + '</span></li>';
+    }).join('') + (r.answer.length > shown.length
+      ? '<li class="d-empty">…and ' + (r.answer.length - shown.length).toLocaleString() + ' more</li>' : '');
+  }
+  $('ac-examples').innerHTML = AC_EXAMPLES.map(p => '<button type="button" class="d-chip" data-p="' + p + '">' + p + '</button>').join('');
+  $('ac-examples').addEventListener('click', e => {
+    const b = e.target.closest('button[data-p]'); if (!b) return;
+    input.value = b.dataset.p; run(); input.focus();
+  });
+  input.addEventListener('input', run);
+  $('ac-reset').addEventListener('click', () => { $('ac-file').value = ''; load(SAMPLE_CITIES); });
+  $('ac-file').addEventListener('change', (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    const reader = new FileReader();
+    reader.onload = () => load(String(reader.result));
+    reader.readAsText(f);
+  });
+  input.value = 'San';
+  load(SAMPLE_CITIES);
+};
+
+/* ================================================================
+   GOMOKU DEMO
+   ================================================================ */
+initDemo.gomoku = function () {
+  const SIZE = 8;
+  let board, over, busy, last;
+  const boardEl = $('gm-board'), statusEl = $('gm-status');
+
+  function setStatus(t, err) { statusEl.textContent = t; statusEl.className = 'd-status' + (err ? ' err' : ''); }
+
+  function buildGrid() {
+    boardEl.innerHTML = '';
+    boardEl.style.gridTemplateColumns = 'repeat(' + SIZE + ', var(--cell, 44px))';
+    for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'd-cell'; b.dataset.y = y; b.dataset.x = x; b.setAttribute('role', 'gridcell');
+      boardEl.appendChild(b);
+    }
+  }
+
+  function draw() {
+    boardEl.querySelectorAll('.d-cell').forEach(c => {
+      const y = +c.dataset.y, x = +c.dataset.x, s = board[y][x];
+      c.dataset.s = s === ' ' ? '' : s;
+      c.classList.toggle('last', !!last && last[0] === y && last[1] === x);
+      c.disabled = over || busy || s !== ' ';
+      const who = s === 'b' ? 'computer stone' : s === 'w' ? 'your stone' : 'empty';
+      c.setAttribute('aria-label', 'Row ' + (y + 1) + ', column ' + (x + 1) + ', ' + who);
+    });
+    drawAnalysis();
+  }
+
+  function drawAnalysis() {
+    let html = '<tr><th>Length</th><th>Black open</th><th>Black semi</th><th>White open</th><th>White semi</th></tr>';
+    for (let L = 2; L <= 5; L++) {
+      const b = detectRows(board, 'b', L), w = detectRows(board, 'w', L);
+      html += '<tr><td>' + L + '</td><td>' + b[0] + '</td><td>' + b[1] + '</td><td>' + w[0] + '</td><td>' + w[1] + '</td></tr>';
+    }
+    $('gm-analysis').innerHTML = html;
+  }
+
+  function finishIfOver() {
+    const res = isWin(board);
+    if (res === 'Continue playing') return false;
+    over = true;
+    setStatus(res === 'Black won' ? 'Computer (Black) wins. Press New game to try again.'
+      : res === 'White won' ? 'You win! 🎉 Press New game to play again.' : 'Draw. Press New game to play again.');
+    draw();
+    return true;
+  }
+
+  function computerMove() {
+    busy = true; setStatus('Computer is thinking…'); draw();
+    setTimeout(() => {
+      let move;
+      if (isEmptyBoard(board)) move = [Math.floor(SIZE / 2), Math.floor(SIZE / 2)];
+      else move = searchMax(board);
+      board[move[0]][move[1]] = 'b';
+      last = move; busy = false;
+      if (!finishIfOver()) { setStatus('Your move (White).'); draw(); }
+    }, 30);
+  }
+
+  function newGame() {
+    board = makeEmptyBoard(SIZE); over = false; busy = false; last = null;
+    computerMove();
+  }
+
+  boardEl.addEventListener('click', (e) => {
+    const c = e.target.closest('.d-cell');
+    if (!c || over || busy) return;
+    const y = +c.dataset.y, x = +c.dataset.x;
+    if (board[y][x] !== ' ') return;
+    board[y][x] = 'w'; last = [y, x];
+    if (finishIfOver()) return;
+    computerMove();
+  });
+  $('gm-new').addEventListener('click', newGame);
+  buildGrid();
+  newGame();
+};
+
+/* ================================================================
+   SEAM CARVING DEMO
+   ================================================================ */
+initDemo.seam = function () {
+  const MAX_W = 300, MAX_H = 225;
+  const range = $('sc-range'), label = $('sc-label'), status = $('sc-status');
+  const cOrig = $('sc-orig'), cEn = $('sc-energy'), cRes = $('sc-result');
+  let st = null;   // { w, h, img, mask, energyImg }
+
+  function makeSample() {
+    const c = document.createElement('canvas'); c.width = 300; c.height = 190;
+    const g = c.getContext('2d');
+    const sky = g.createLinearGradient(0, 0, 0, 130);
+    sky.addColorStop(0, '#7fb8e8'); sky.addColorStop(1, '#d9eefb');
+    g.fillStyle = sky; g.fillRect(0, 0, 300, 190);
+    g.fillStyle = '#ffd84a'; g.beginPath(); g.arc(244, 42, 22, 0, 7); g.fill();
+    g.fillStyle = '#8fa3b8'; g.beginPath(); g.moveTo(0, 130); g.lineTo(60, 80); g.lineTo(110, 130); g.fill();
+    g.fillStyle = '#7a8fa6'; g.beginPath(); g.moveTo(80, 130); g.lineTo(150, 70); g.lineTo(230, 130); g.fill();
+    g.fillStyle = '#58a65c'; g.fillRect(0, 128, 300, 62);
+    g.fillStyle = '#4a8f4e'; g.fillRect(0, 160, 300, 30);
+    // house
+    g.fillStyle = '#c9553f'; g.fillRect(105, 98, 80, 56);
+    g.fillStyle = '#5a3a2e'; g.beginPath(); g.moveTo(98, 100); g.lineTo(145, 66); g.lineTo(192, 100); g.fill();
+    g.fillStyle = '#f2e3c6'; g.fillRect(114, 110, 20, 18); g.fillRect(156, 110, 20, 18);
+    g.fillStyle = '#3d2a20'; g.fillRect(138, 126, 14, 28);
+    // trees
+    g.fillStyle = '#6b4a2f'; g.fillRect(40, 118, 8, 40); g.fillRect(250, 120, 8, 38);
+    g.fillStyle = '#2f7d36';
+    g.beginPath(); g.arc(44, 106, 22, 0, 7); g.fill();
+    g.beginPath(); g.arc(254, 108, 20, 0, 7); g.fill();
+    // flowers
+    const cols = ['#ff6fa0', '#ffffff', '#ffd84a'];
+    for (let i = 0; i < 18; i++) { g.fillStyle = cols[i % 3]; g.fillRect(10 + i * 16, 168 + (i * 7) % 14, 4, 4); }
+    return c;
+  }
+
+  function load(srcCanvasOrImage, sw, sh) {
+    const scale = Math.min(1, MAX_W / sw, MAX_H / sh);
+    const w = Math.max(2, Math.round(sw * scale)), h = Math.max(2, Math.round(sh * scale));
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    const g = c.getContext('2d'); g.drawImage(srcCanvasOrImage, 0, 0, w, h);
+    const id = g.getImageData(0, 0, w, h);
+    const maxSeams = Math.max(1, Math.floor(w * 0.4));
+    status.className = 'd-status'; status.textContent = 'Computing ' + maxSeams + ' seams…';
+    range.disabled = true;
+    setTimeout(() => {
+      const t0 = performance.now();
+      const img = { w, h, data: id.data };
+      const { mask, firstEnergy } = computeSeams(img, maxSeams);
+      const en = new ImageData(w, h);
+      for (let i = 0; i < w * h; i++) { const v = firstEnergy[i]; en.data[i * 4] = en.data[i * 4 + 1] = en.data[i * 4 + 2] = v; en.data[i * 4 + 3] = 255; }
+      st = { w, h, img, mask, en };
+      range.max = maxSeams; range.value = Math.min(Math.round(maxSeams / 2), maxSeams); range.disabled = false;
+      status.textContent = w + ' × ' + h + ' px · ' + maxSeams + ' seams computed in ' + Math.round(performance.now() - t0) + ' ms';
+      render();
+    }, 20);
+  }
+
+  function render() {
+    if (!st) return;
+    const { w, h, img, mask, en } = st;
+    const k = +range.value;
+    label.textContent = 'Seams removed: ' + k + ' (width ' + w + ' → ' + (w - k) + ')';
+    // original with seams in red
+    cOrig.width = w; cOrig.height = h;
+    const o = new ImageData(new Uint8ClampedArray(img.data), w, h);
+    for (let i = 0; i < w * h; i++) {
+      if (mask[i] > 0 && mask[i] <= k) { o.data[i * 4] = 255; o.data[i * 4 + 1] = 40; o.data[i * 4 + 2] = 70; }
+    }
+    cOrig.getContext('2d').putImageData(o, 0, 0);
+    // energy
+    cEn.width = w; cEn.height = h; cEn.getContext('2d').putImageData(en, 0, 0);
+    // result
+    const nw = w - k;
+    cRes.width = nw; cRes.height = h;
+    const r = new ImageData(nw, h);
+    for (let y = 0; y < h; y++) {
+      let dc = 0;
+      for (let x = 0; x < w; x++) {
+        const m = mask[y * w + x];
+        if (m > 0 && m <= k) continue;
+        const s = (y * w + x) * 4, d = (y * nw + dc) * 4;
+        r.data[d] = img.data[s]; r.data[d + 1] = img.data[s + 1]; r.data[d + 2] = img.data[s + 2]; r.data[d + 3] = 255;
+        dc++;
+      }
+    }
+    cRes.getContext('2d').putImageData(r, 0, 0);
+    cRes.style.width = (nw / w * 100) + '%'; cRes.style.height = 'auto';
+    $('sc-result-cap').textContent = 'Result (' + nw + ' × ' + h + ')';
+  }
+
+  range.addEventListener('input', render);
+  $('sc-sample').addEventListener('click', () => { const c = makeSample(); load(c, c.width, c.height); });
+  $('sc-file').addEventListener('change', (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    const url = URL.createObjectURL(f);
+    const im = new Image();
+    im.onload = () => { load(im, im.naturalWidth, im.naturalHeight); URL.revokeObjectURL(url); };
+    im.onerror = () => { status.className = 'd-status err'; status.textContent = 'Could not read that image file.'; URL.revokeObjectURL(url); };
+    im.src = url;
+  });
+  const c = makeSample(); load(c, c.width, c.height);
+};
+
+/* ================================================================
+   SYNONYMS DEMO
+   ================================================================ */
+const SAMPLE_CORPUS = `The small dog chased the ball across the park. The puppy chased the ball across the garden. A young puppy plays in the park with the ball. The old dog sleeps in the garden after dinner.
+The cat sleeps on the sofa all day. The kitten sleeps on the sofa near the window. A small kitten plays with a ball of yarn. The cat watched the birds from the window.
+The car drove down the road at high speed. The automobile drove down the highway at high speed. A fast car raced along the road. The truck drove along the highway with a heavy load.
+The big house stood on the hill above the river. The large house stood near the river and the old bridge. A big building stood on the hill. The large building towered over the road.
+She was happy to see the puppy in the park. He felt glad to see the kitten on the sofa. The happy child laughed in the garden. The glad child smiled at the puppy.
+The sad child cried when the ball rolled away. The unhappy child cried near the window. A sad kitten hid under the sofa. The unhappy dog waited by the road.
+We ate fresh bread and cheese for lunch. They ate warm bread and soup for dinner. The baker made fresh bread early in the morning. The cook made warm soup for dinner.
+The quick fox jumped over the fence. The fast fox ran across the field. A slow turtle crossed the road. The slow turtle rested near the river.`;
+const SAMPLE_TEST = `automobile car dog car soup river
+large big big sad fast warm
+glad happy sad happy slow fresh
+quick fast fast slow large warm`;
+
+initDemo.synonyms = function () {
+  let desc = new Map();
+  let uploads = [];   // { name, text }
+  const status = $('sy-status');
+  $('sy-corpus').value = SAMPLE_CORPUS;
+  $('sy-test').value = SAMPLE_TEST;
+
+  function build() {
+    status.className = 'd-status'; status.textContent = 'Building word vectors…';
+    setTimeout(() => {
+      const texts = [$('sy-corpus').value].concat(uploads.map(u => u.text));
+      let sentences = [];
+      texts.forEach(t => { sentences = sentences.concat(textToSentences(t)); });
+      desc = buildSemanticDescriptors(sentences);
+      status.textContent = sentences.length.toLocaleString() + ' sentences · ' + desc.size.toLocaleString() + ' distinct words' +
+        (uploads.length ? ' · ' + uploads.length + ' uploaded file' + (uploads.length > 1 ? 's' : '') : '');
+      query();
+    }, 20);
+  }
+
+  function query() {
+    const word = $('sy-word').value.trim().toLowerCase();
+    const choices = $('sy-choices').value.split(/[,\s]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
+    const bars = $('sy-bars');
+    if (!word || choices.length === 0) { bars.innerHTML = ''; return; }
+    if (!desc.has(word)) {
+      bars.innerHTML = '<li><span class="name" style="grid-column:1/-1;white-space:normal;color:#A3341F">"' + esc(word) + '" does not appear in the text, so there is nothing to compare.</span></li>';
+      return;
+    }
+    const ranked = rankChoices(word, choices, desc);
+    const winner = mostSimilarWord(word, choices, desc);
+    bars.innerHTML = ranked.slice().sort((a, b) => b.sim - a.sim).map(r => {
+      const pct = Math.max(0, r.sim) * 100;
+      return '<li class="' + (r.choice === winner ? 'best' : '') + '"><span class="name">' + esc(r.choice) +
+        '</span><span class="track"><span class="fill" style="width:' + pct + '%"></span></span><span class="val">' +
+        (r.sim < 0 ? 'n/a' : r.sim.toFixed(3)) + '</span></li>';
+    }).join('');
+  }
+
+  $('sy-build').addEventListener('click', build);
+  $('sy-go').addEventListener('click', query);
+  ['sy-word', 'sy-choices'].forEach(id => $(id).addEventListener('keydown', e => { if (e.key === 'Enter') query(); }));
+  $('sy-clear').addEventListener('click', () => { uploads = []; $('sy-files').value = ''; build(); });
+  $('sy-files').addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+    Promise.all(files.map(f => new Promise(res => {
+      const r = new FileReader(); r.onload = () => res({ name: f.name, text: String(r.result) }); r.readAsText(f);
+    }))).then(list => { uploads = uploads.concat(list); build(); });
+  });
+  $('sy-run').addEventListener('click', () => {
+    const out = $('sy-test-out');
+    if (desc.size === 0) { out.textContent = 'Build the word vectors first.'; return; }
+    const r = runSimilarityTest($('sy-test').value, desc);
+    out.textContent = r.total === 0 ? 'No valid test lines found.'
+      : r.correct + ' of ' + r.total + ' correct (' + r.pct.toFixed(1) + '%)';
+  });
+  build();
+};
+
+/* ---------- start: first demo + deep link ---------- */
+(function () {
+  const m = location.hash.match(/^#demo-(\w+)$/);
+  showDemo(m && DEMOS.includes(m[1]) ? m[1] : 'autocomplete');
+  if (m && DEMOS.includes(m[1])) setTimeout(() => $('demos').scrollIntoView(), 0);
+})();
 })();
 </script>
 </body>
